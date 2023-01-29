@@ -1,7 +1,7 @@
 const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, UnauthenticatedError } = require("../errors");
 
-const User = require("../models/User");
+const User = require("../models/user");
 
 const register = async (req, res) => {
   // console.log(process.env.JWT_SECRET);
