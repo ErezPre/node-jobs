@@ -47,7 +47,7 @@ const updateJob = async (req, res) => {
   if (!job) {
     throw new NotFoundError(`no job with id ${jobId}`);
   }
-  res.status(StatusCodes.OK).json({ job, position });
+  res.status(StatusCodes.OK).json({ job, position: position });
 };
 const getJob = async (req, res) => {
   const jobId = req.params.id;
