@@ -32,7 +32,7 @@ const updateJob = async (req, res) => {
   const { company, position } = req.body;
   const jobId = req.params.id;
   userId = req.user.id;
-  if (!company || !position) {
+  if (company === "" || position === "") {
     throw new BadRequestError(`company and/or position field is empty`);
   }
 
@@ -47,7 +47,7 @@ const updateJob = async (req, res) => {
   if (!job) {
     throw new NotFoundError(`no job with id ${jobId}`);
   }
-  res.status(StatusCodes.OK).json(job);
+  res.status(StatusCodes.OK).json({ job, position });
 };
 const getJob = async (req, res) => {
   const jobId = req.params.id;
