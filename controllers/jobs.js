@@ -16,7 +16,7 @@ const deleteJob = async (req, res) => {
       `no job with id ${jobId} matches for user ${userId}`
     );
   }
-  res.status(StatusCodes.OK).json({ job });
+  res.status(StatusCodes.OK).json({ job, userId });
 };
 const getAllJobs = async (req, res) => {
   const jobs = await Job.find({ createdBy: req.user.userId }).sort("createdAt");
