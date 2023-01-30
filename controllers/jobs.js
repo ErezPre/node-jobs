@@ -32,7 +32,7 @@ const updateJob = async (req, res) => {
   const { company, position } = req.body;
   const jobId = req.params.id;
   userId = req.user.id;
-  if (typeof company == undefined || typeof position == undefined) {
+  if (typeof company === "undefined" || typeof position === "undefined") {
     throw new BadRequestError(`company and/or position field is empty`);
   }
 
