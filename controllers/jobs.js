@@ -9,7 +9,7 @@ const createJob = async (req, res) => {
 };
 const deleteJob = async (req, res) => {
   const jobId = req.params.id;
-  const userId = req.user.id;
+  const userId = req.user.userId;
   const job = await Job.findByIdAndRemove({ _id: jobId, createdBy: userId });
   if (!job) {
     throw new NotFoundError(`no job with id ${jobId}`);
