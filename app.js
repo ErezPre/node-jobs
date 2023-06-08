@@ -18,7 +18,7 @@ const connectDB = require("./db/connect");
 const authenticateUser = require("./middleware/authentication");
 
 app.get("/", (req, res) => {
-  res.status(StatusCodes.OK).json({ msg: "hey there333" });
+  res.json({ msg: "hey there333" });
   //res.send("hey there333");
 });
 
