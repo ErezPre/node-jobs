@@ -18,7 +18,8 @@ const connectDB = require("./db/connect");
 const authenticateUser = require("./middleware/authentication");
 
 app.get("/", (req, res) => {
-  res.send("hey there333");
+  res.status(StatusCodes.OK).json({ "hey there333" });
+  //res.send("hey there333");
 });
 
 // routers
